@@ -26,13 +26,7 @@ public class Consumer {
         CancelCallback cancelCallback = consumer -> {
             System.out.println("消息消费被中断");
         };
-        /*
-         * 消费者接收消息
-         * 参数1：表示消费哪个UI列
-         * 参数2：消费成功之后，是否需要自动应答，true表示自动应答，false表示手动应答
-         * 参数3：消费者成功消费的回调
-         * 参数4：消费者取消消费的回调
-         */
+        System.out.println("等待接收消息……");
         channel.basicConsume(QUEUE_NAME, true, deliverCallback, cancelCallback);
     }
 }
